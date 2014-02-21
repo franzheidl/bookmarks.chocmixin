@@ -1,0 +1,63 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+
+body { margin: 0; background: #fff; color: #333; font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, sans-serif; font-size: 12px; min-width: 255px; }
+
+#search-area { padding: 4px 12px; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #8e8e8e; background: #ddd; background: -webkit-linear-gradient(top, #ebebeb, gainsboro); box-sizing: border-box; position: fixed; top: 0; z-index: 1000; width: 100%; }
+
+#search { font-size: 16px; width: 100%; }
+
+input[type="search"]::-webkit-textfield-decoration-container { background-image: url("../img/search.png"); background-repeat: no-repeat; background-position: 3px 2px; padding-left: 8px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { input[type="search"]::-webkit-textfield-decoration-container { background-image: url("../img/search@2x.png"); background-size: 13px; } }
+
+#bookmarks { display: table; margin: 36px 0 0 0; padding: 0; -webkit-border-horizontal-spacing: 0; -webkit-border-vertical-spacing: 0; -webkit-user-select: none; cursor: default; text-align: left; width: 100%; table-layout: fixed; }
+#bookmarks li { display: table-row; height: 42px !important; max-height: 42px; overflow: hidden; }
+#bookmarks li:nth-child(even) { background-color: #f3f6fa; }
+#bookmarks li#selected { background: -webkit-linear-gradient(top, #bcc7db, #9baac3); border-top: 1px solid #bac5d5; border-bottom: 1px solid #92a0b8; color: #fff; text-shadow: 0 1px 0 #555; }
+#bookmarks li#selected .info-path { color: #fff; }
+#bookmarks li .edit { width: 38px; }
+#bookmarks li.editable .info-name, #bookmarks li.editable .info-path, #bookmarks li.editable .edit-icon { display: none; }
+#bookmarks li.editable input[type="text"], #bookmarks li.editable .cancel-icon, #bookmarks li.editable .save-icon { display: inline-block; }
+#bookmarks li.editable .info { padding-top: 10px; }
+#bookmarks .no-bookmarks { background: url('../img/bookmark-bg.png') no-repeat center; display: table-cell; padding-top: 72px; padding-bottom: 72px; text-align: center; color: #666; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .no-bookmarks { background: url('../img/bookmark-bg@2x.png') no-repeat center; } }
+#bookmarks .remove, #bookmarks .icon, #bookmarks .info, #bookmarks .edit { box-sizing: border-box; display: table-cell; overflow: hidden; text-align: left; word-wrap: break-word; }
+#bookmarks .remove, #bookmarks .icon, #bookmarks .edit { padding-top: 10px; }
+#bookmarks .remove { width: 20px; }
+#bookmarks .icon { width: 20px; }
+#bookmarks .edit { padding-right: 16px; text-align: right; }
+#bookmarks .remove-icon, #bookmarks .file-icon, #bookmarks .folder-icon, #bookmarks .edit-icon, #bookmarks .cancel-icon, #bookmarks .save-icon { display: inline-block; line-height: 1; width: 16px; height: 16px; }
+#bookmarks .remove-icon { background: url("../img/remove.png") no-repeat; background-position: 4px 4px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .remove-icon { background: url("../img/remove@2x.png") no-repeat; background-size: 8px; } }
+#bookmarks .file-icon { background: url("../img/bookmark_file.png") no-repeat; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .file-icon { background: url("../img/bookmark_file@2x.png") no-repeat; background-size: 16px; } }
+#bookmarks .folder-icon { background: url("../img/bookmark_folder.png") no-repeat; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .folder-icon { background: url("../img/bookmark_folder@2x.png") no-repeat; background-size: 16px; } }
+#bookmarks .edit-icon { background: url("../img/edit.png") no-repeat; background-position: 4px 4px; margin-top: 2px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .edit-icon { background: url("../img/edit@2x.png") no-repeat; background-size: 8px; } }
+#bookmarks .cancel-icon { background: url("../img/cancel.png") no-repeat; margin-right: 4px; margin-top: 3px; display: none; opacity: .75; }
+#bookmarks .cancel-icon:hover, #bookmarks .cancel-icon:active { opacity: 1; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .cancel-icon { background: url("../img/cancel@2x.png") no-repeat; background-size: 16px; } }
+#bookmarks .save-icon { background: url("../img/save.png") no-repeat; margin-top: 3px; display: none; opacity: .75; }
+#bookmarks .save-icon:hover, #bookmarks .save-icon:active { opacity: 1; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #bookmarks .save-icon { background: url("../img/save@2x.png") no-repeat; background-size: 16px; } }
+#bookmarks .info { overflow: hidden; padding: 5px 5px; vertical-align: top; word-wrap: nowrap; overflow: hidden; }
+#bookmarks .info .info-name { display: block; font-weight: bold; height: 12px; margin-bottom: 3px; overflow: hidden; }
+#bookmarks .info .info-path { color: #666; display: block; font-size: 11px; height: 12px; overflow: hidden; }
+#bookmarks .info .path-delim { font-size: 7px; margin-left: 2px; margin-right: 2px; }
+#bookmarks .info input[type="text"] { box-sizing: border-box; display: none; padding: 2px 4px; width: 100%; }
+#bookmarks .hidden { display: none; }

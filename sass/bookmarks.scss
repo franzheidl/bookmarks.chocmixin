@@ -1,0 +1,250 @@
+@import "compass/reset";
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, sans-serif;
+  font-size: 12px;
+  min-width: 255px;
+}
+
+#search-area {
+  padding: 4px 12px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #8e8e8e;
+  background: #ddd;
+  background: -webkit-linear-gradient(top, #ebebeb, #dcdcdc);
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%
+}
+
+#search {
+  font-size: 16px;
+  width: 100%;
+}
+
+input[type="search"]::-webkit-textfield-decoration-container {
+  background-image: url('../img/search.png');
+  background-repeat: no-repeat;
+  background-position: 3px 2px;
+  padding-left: 8px;
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url('../img/search@2x.png');
+    background-size: 13px;
+  }
+}
+
+#bookmarks {
+  display: table;
+  margin: 36px 0 0 0;
+  padding: 0;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+  -webkit-user-select: none;
+  cursor: default;
+  text-align: left;
+  width: 100%;
+  table-layout: fixed;
+  
+  li {
+    // box-sizing: border-box;
+    display: table-row;
+    height: 42px !important;
+    max-height: 42px;
+    overflow: hidden;
+    &:nth-child(even) {
+      background-color: #f3f6fa;
+    }
+    &#selected {
+      background: -webkit-linear-gradient(top, #bcc7db, #9baac3);
+      border-top: 1px solid #bac5d5;
+      border-bottom: 1px solid #92a0b8;
+      color: #fff;
+      text-shadow: 0 1px 0 #555;
+      .info-path {
+        color: #fff;
+      }
+    }
+    .edit {
+      width: 38px;
+    }
+    &.editable {
+      .info-name,
+      .info-path,
+      .edit-icon {
+        display: none;
+      }
+      input[type="text"],
+      .cancel-icon,
+      .save-icon {
+        display: inline-block;
+      }
+      .info {
+        padding-top: 10px;
+      }
+    }
+  }
+  
+  .no-bookmarks {
+    background: image-url('bookmark-bg.png') no-repeat center;
+    display: table-cell;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    text-align: center;
+    color: #666;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: image-url('bookmark-bg@2x.png') no-repeat center;
+    }
+  }
+  
+  .remove,
+  .icon,
+  .info,
+  .edit {
+    box-sizing: border-box;
+    display: table-cell;
+    overflow: hidden;
+    text-align: left;
+    word-wrap: break-word;
+  }
+  
+  .remove,
+  .icon,
+  .edit {
+    padding-top: 10px;
+  }
+  
+  .remove {
+    width: 20px;
+  }
+  .icon {
+    width: 20px;
+  }
+  
+  .edit {
+    padding-right: 16px;
+    text-align: right;
+  }
+  
+  .remove-icon,
+  .file-icon,
+  .folder-icon,
+  .edit-icon,
+  .cancel-icon,
+  .save-icon {
+    display: inline-block;
+    line-height: 1;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .remove-icon {
+    background: url('../img/remove.png') no-repeat;
+    background-position: 4px 4px;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/remove@2x.png') no-repeat;
+      background-size: 8px;
+    }
+  }
+  
+  .file-icon {
+    background: url('../img/bookmark_file.png') no-repeat;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/bookmark_file@2x.png') no-repeat;
+      background-size: 16px;
+    }
+  }
+  
+  .folder-icon {
+    background: url('../img/bookmark_folder.png') no-repeat;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/bookmark_folder@2x.png') no-repeat;
+      background-size: 16px;
+    }
+  }
+  
+  .edit-icon {
+    background: url('../img/edit.png') no-repeat;
+    background-position: 4px 4px;
+    margin-top: 2px;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/edit@2x.png') no-repeat;
+      background-size: 8px;
+    }
+  }
+  
+  .cancel-icon {
+    background: url('../img/cancel.png') no-repeat;
+    margin-right: 4px;
+    margin-top: 3px;
+    display: none;
+    opacity: .75;
+    &:hover, &:active {
+      opacity: 1;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/cancel@2x.png') no-repeat;
+      background-size: 16px;
+    }
+  }
+  
+  .save-icon {
+    background: url('../img/save.png') no-repeat;
+    margin-top: 3px;
+    display: none;
+    opacity: .75;
+    &:hover, &:active {
+      opacity: 1;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      background: url('../img/save@2x.png') no-repeat;
+      background-size: 16px;
+    }
+  }
+  
+  .info {
+    overflow: hidden;
+    padding: 5px 5px;
+    vertical-align: top;
+    word-wrap: nowrap;
+    overflow: hidden;
+    
+    .info-name {
+      display: block;
+      font-weight: bold;
+      height: 12px;
+      margin-bottom: 3px;
+      overflow: hidden;
+    }
+    
+    .info-path {
+      color: #666;
+      display: block;
+      font-size: 11px;
+      height: 12px;
+      overflow: hidden;
+    }
+    
+    .path-delim {
+      font-size: 7px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+    
+    input[type="text"] {
+      box-sizing: border-box;
+      display: none;
+      padding: 2px 4px;
+      width: 100%;
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+}

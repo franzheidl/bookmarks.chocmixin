@@ -1,0 +1,16 @@
+{
+  "name": "Bookmarks",
+  "version": "1.0.0",
+  "description": "Bookmark files anywhere on your system.",
+  "main": "init.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franzheidl/bookmarks.chocmixin.git"
+  },
+  "keywords": [
+  "bookmarks",
+  "favorites"
+  ],
+  "author": "Franz Heidl",
+  "license": "MIT"
+}
