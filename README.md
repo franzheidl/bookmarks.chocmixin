@@ -9,13 +9,13 @@ To bookmark your current file hit `alt-ctrl-b` or use `Go > Bookmarks > Add Book
 If the Bookmarks window is already open, you can alternatively click the `Add Bookmark` button.
 
 ## Opening a bookmark
-Bring up the Bookmarks window by selecting `Go > Bookmarks > Show Bookmarks` or using `alt-cmd-ctrl-b`. Use the `Arrow Down` / `Arrow Up` keys to select the bookmark to open and doubleclick or hit `Enter` to open it.
+Bring up the Bookmarks window by selecting `Go > Bookmarks > Show Bookmarks` or using `alt-cmd-ctrl-b`. Use the `Arrow Down` / `Arrow Up` keys to select the bookmark to open and double click or hit `Enter` to open it.
 
-## Editing a bookmark, bookmarking direcotories
+## Editing a bookmark, bookmarking directories
 Click the Edit icon of the bookmark you want to edit:
 
 To bookmark a directory, simply edit the path to point to a directory. There is unfortunately no way to directly bookmark a directory.
-When you have edited a bookmark, the mixin will check for its type and validate its existance.
+When you have edited a bookmark, the mixin will check for its type and validate its existence.
 
 
 ---
