@@ -329,7 +329,6 @@ function updateWin() {
     };
     
     window.userInput = function(e) {
-      // chocolat.sendMessage('debug', 'input');
       filterList(e);
     };
     
