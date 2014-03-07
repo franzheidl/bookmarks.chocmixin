@@ -49,28 +49,33 @@ function openBookmark(p) {
 
 function addBookmark() {
   if (Document.current()) { // TODO: error check
-    var currentPath = (Document.current()).path();
-    if (currentPath) {
-      var bookmarks = getBookmarks();
-      var b = {path: currentPath};
-      if (isUniqueBookmark(b)) {
-        if (fs.lstatSync(currentPath).isFile()) {
-          b.type = 'file';
+    if (Document.current().isUntitled()) {
+      Alert.show('Unsaved Document.', 'Save your document first in order to bookmark.');
+    } else {
+      var currentPath = (Document.current()).path();
+      if (currentPath) {
+        var bookmarks = getBookmarks();
+        var b = {path: currentPath};
+        if (isUniqueBookmark(b)) {
+          if (fs.lstatSync(currentPath).isFile()) {
+            b.type = 'file';
+          }
+          else if (fs.lstatSync(currentPath).isDirectory()) {
+            b.type = 'directory';
+          }
+          bookmarks.push(b);
+          Storage.persistent().set('bookmarks', bookmarks);
         }
-        else if (fs.lstatSync(currentPath).isDirectory()) {
-          b.type = 'directory';
+        else {
+          Alert.show('Bookmark already exists.', b.path);
         }
-        bookmarks.push(b);
-        Storage.persistent().set('bookmarks', bookmarks);
+        // if (win || win !== undefined) {
+          updateWin();
+        // }
       }
-      else {
-        Alert.show('Bookmark already exists.', b.path);
-      }
-      // if (win || win !== undefined) {
-        updateWin();
-      // }
     }
-   }
+      
+  }
   else {
     Alert.show('No open document to bookmark!');
   }
@@ -156,7 +161,7 @@ function saveEditedBookmark(b) {
   
 }
 
-function updateWin() { // TODO wrap in if win exists
+function updateWin() {
   
   if (win) {
   
@@ -239,7 +244,7 @@ function updateWin() { // TODO wrap in if win exists
       return nextSiblingWithoutClass;
     };
     
-    var filterList = function(e) { // TODO: search input field, so no need to coerce display path!
+    var filterList = function(e) {
       var searchString = e.target.value;
       var selectedBookmark = document.getElementById('selected');
       var items = bookmarksContainer.childNodes;
@@ -401,8 +406,7 @@ function updateWin() { // TODO wrap in if win exists
       
     };
     
-    window.userEditKeyPressed = function(e) { // TODO: use to check for esc/return while editing
-      // chocolat.sendMessage('debug', 'user edit key');
+    window.userEditKeyPressed = function(e) {
       
       /* ESC -> Cancel editing */
       if (e.keyCode === 27) {
@@ -420,7 +424,6 @@ function updateWin() { // TODO wrap in if win exists
     
     
     /* Clear the DOM */
-    
     while (bookmarksContainer.lastChild) {
       bookmarksContainer.removeChild(bookmarksContainer.lastChild);
     }
@@ -428,7 +431,6 @@ function updateWin() { // TODO wrap in if win exists
     var html = '';
         
     /* Create the DOM */
-    
     if (bookmarks.length === 0) {
       html += '<li><span class="no-bookmarks">No bookmarks saved yet</span></li>';
       bookmarksContainer.innerHTML = html;
@@ -455,12 +457,10 @@ function updateWin() { // TODO wrap in if win exists
           
         //select first item:
         if (b === (bookmarks.length - 1)) {
-          // html += '<li id="selected" onclick="select(event)" ondblclick="open(event)" data-path="' + path + '">';
           html += '<li id="selected" data-path="' + path + '">';
 
         }
         else {
-          // html += '<li onclick="select(event)" ondblclick="open(event)" data-path="' + path + '">';
           html += '<li data-path="' + path + '">';
         }
         
