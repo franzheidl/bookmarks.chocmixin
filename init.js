@@ -311,7 +311,6 @@ function updateWin() {
       var target = getTarget(e.target);
       var inputField = target.querySelector('input');
       target.classList.remove('editable');
-      // TODO: reset input field value
       inputField.value = target.getAttribute('data-path');
       searchField.focus();
     };
@@ -336,7 +335,7 @@ function updateWin() {
     
     window.userKeyPressed = function(e) {
       var selectedBookmark = document.getElementById('selected');
-      var buttonBarHeight = 36; // change to 36 once the button bar is included
+      var buttonBarHeight = 36;
       var newSelectedBookmark;
       
       /* ESC -> close window or unfocus search field TODO: check if there is any editable and un-editable it first! */
@@ -486,11 +485,9 @@ function updateWin() {
         html += '<span class="info">';
         
         // info-title
-        
         html += '<span class="info-name">' + name + '</span>';
         
         // info-path
-        
         html += '<span class="info-path">' + displayPath + '</span>';
         
         // info-path-input
@@ -504,15 +501,12 @@ function updateWin() {
         html += '<span class="edit">';
         
         // edit icon
-        
         html += '<span class="edit-icon" onclick="edit(event)"></span>';
         
         // cancel icon
-        
         html += '<span class="cancel-icon" onclick="cancelEdit(event)"></span>';
         
         // save icon
-        
         html += '<span class="save-icon" onclick="saveEdit(event)"></span>';
                 
         html += '</span>';
@@ -531,7 +525,6 @@ function updateWin() {
       }
       
     }
-        
             
   }, [bookmarks]);
 }
