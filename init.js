@@ -48,7 +48,7 @@ function openBookmark(p) {
 
 
 function addBookmark() {
-  if (Document.current()) { // TODO: error check
+  if (Document.current()) {
     if (Document.current().isUntitled()) {
       Alert.show('Unsaved Document.', 'Save your document first in order to bookmark.');
     } else {
@@ -69,9 +69,7 @@ function addBookmark() {
         else {
           Alert.show('Bookmark already exists.', b.path);
         }
-        // if (win || win !== undefined) {
-          updateWin();
-        // }
+        updateWin();
       }
     }
       
