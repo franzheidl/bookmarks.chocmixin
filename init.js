@@ -67,7 +67,7 @@ function addBookmark() {
           Storage.persistent().set('bookmarks', bookmarks);
         }
         else {
-          Alert.show('Bookmark already exists.', b.path);
+          Alert.show('Bookmark already exists:', b.path);
         }
         updateWin();
       }
