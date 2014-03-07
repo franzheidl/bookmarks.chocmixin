@@ -9,7 +9,7 @@ To bookmark your current document hit `alt-ctrl-b` or use `Go > Bookmarks > Add 
 If the Bookmarks window is already open, you can alternatively click the `Add Bookmark` button.
 
 ## Opening a bookmark
-Bring up the Bookmarks window by selecting `Go > Bookmarks > Show Bookmarks` or using `alt-cmd-ctrl-b`. Use the `Arrow Down` / `Arrow Up` keys to select the bookmark to open and double click or hit `Enter` to open it.
+Bring up the Bookmarks window by selecting `Go > Bookmarks > Show Bookmarks` or using `alt-cmd-ctrl-b`. Use the `Arrow Down` / `Arrow Up` keys to select the bookmark to open and double click or hit `Enter` to open it. Once a bookmark has been opened, the bookmarks window will close to get out of your way.
 
 ## Editing a bookmark, bookmarking directories
 Click the Edit icon of the bookmark you want to edit:
