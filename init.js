@@ -535,7 +535,7 @@ function showBookmarks() {
     win = new Window();
     win.htmlPath = './html/bookmarks.html';
     win.title = 'Bookmarks';
-    win.buttons = ['Add Bookmark', 'Clear all bookmarks','Close[Esc]'];
+    win.buttons = ['Add Bookmark', 'Clear all Bookmarks','Close[Esc]'];
     
     win.onLoad = function() {
       updateWin();
