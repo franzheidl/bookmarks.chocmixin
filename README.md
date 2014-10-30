@@ -2,7 +2,7 @@
 
 A mixin for [Chocolat](http://www.chocolatapp.com) to bookmark files or directories for single click/keystroke access.
 
-![bookmarks.chocmixin Screenshot](http://github.com/franzheidl/bookmarks.chocmixin/raw/master/screenshots/bookmarks.png)
+![bookmarks.chocmixin Screenshot](screenshots/bookmarks.png)
 
 ## Adding a bookmark
 To bookmark your current document hit `alt-ctrl-b` or use `Go > Bookmarks > Add Bookmark`.
