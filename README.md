@@ -14,7 +14,7 @@ Bring up the Bookmarks window by selecting `Go > Bookmarks > Show Bookmarks` or 
 ## Editing a bookmark, bookmarking directories
 Click the Edit icon of the bookmark you want to edit:
 
-![Editing Screenshot](http://github.com/franzheidl/bookmarks.chocmixin/raw/master/screenshots/bookmarks-edit.png)
+![Editing Screenshot](screenshots/bookmarks-edit.png)
 
 To bookmark a directory, simply edit the path to point to a directory. There is unfortunately no way to directly bookmark a directory.
 When you have edited a bookmark, the mixin will check for its type and validate it exists on disk.
